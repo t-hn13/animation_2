@@ -1,0 +1,108 @@
+/* Reset toàn cục để đồng nhất giữa các trình duyệt */
+* {
+  padding: 0; /* Xóa padding mặc định */
+  margin: 0; /* Xóa margin mặc định */
+  box-sizing: border-box; /* Tính kích thước phần tử gồm cả border và padding */
+  font-family: "Roboto", sans-serif; /* Font chữ chung cho toàn trang */
+  text-decoration: none; /* Bỏ gạch chân mặc định cho <a> */
+}
+
+/* Nền trang */
+body {
+  background-color: rgb(160, 160, 160); /* Màu xám nhạt */
+}
+
+/* Container chính cho card */
+.card {
+  width: 30%; /* Card chiếm 30% chiều ngang màn hình */
+  margin: 40px auto; /* Căn giữa, cách trên/dưới 40px */
+  position: relative; /* Để chứa tuyệt đối (absolute) các phần tử con */
+  cursor: pointer; /* Biểu tượng chuột dạng "tay" khi hover */
+}
+
+/* Hiệu ứng khi hover card: phóng to ảnh */
+.card:hover img {
+  transform: scale(1.5); /* Zoom ảnh lên 1.5 lần */
+}
+
+/* Vùng ảnh */
+.img {
+  width: 100%; /* Rộng hết card */
+  overflow: hidden; /* Ẩn phần ảnh bị phóng to vượt khung */
+  position: relative; /* Để thêm lớp phủ (overlay) */
+}
+
+/* Khi hover card: overlay (lớp phủ đen mờ) xuất hiện */
+.card:hover .img::after {
+  opacity: 1;
+}
+
+/* Overlay mặc định (ẩn đi) */
+.img::after {
+  position: absolute;
+  content: ""; /* Tạo phần tử giả */
+  background-color: #00000077; /* Màu đen mờ (77 = độ trong suốt) */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease-in-out; /* Hiệu ứng mượt khi hiện/ẩn */
+  opacity: 0; /* Ẩn mặc định */
+}
+
+/* Ảnh trong card */
+.img img {
+  transition: 0.5s ease-in-out; /* Mượt khi scale */
+  width: 100%; /* Chiếm hết chiều ngang container */
+  object-fit: cover; /* Cắt ảnh cho vừa khung, không méo */
+}
+
+/* Nội dung card */
+.card-content {
+  position: absolute; /* Đặt tuyệt đối trong .card */
+  right: 0; /* Sát mép phải */
+  bottom: -140px; /* Đẩy xuống dưới (ẩn 1 phần) */
+  background-color: white; /* Nền trắng */
+  width: 90%; /* Chiều ngang nội dung = 90% card */
+  padding: 30px; /* Khoảng đệm */
+}
+
+/* Tiêu đề */
+.card-content h3 {
+  font-size: 25px;
+  padding-bottom: 10px;
+  border-bottom: 2px dashed gray; /* Gạch dưới nét đứt */
+}
+
+/* Đoạn mô tả */
+.card-content p {
+  display: -webkit-box; /* Bắt buộc cho line clamp */
+  -webkit-line-clamp: 2; /* Giới hạn 2 dòng */
+  -webkit-box-orient: vertical; /* Đặt hướng box theo chiều dọc */
+  overflow: hidden; /* Ẩn phần chữ thừa */
+  text-overflow: ellipsis; /* Hiện "..." khi quá dài */
+  font-size: 20px;
+  color: gray;
+  letter-spacing: 2px; /* Giãn chữ */
+  margin: 10px 0px;
+}
+
+/* Nút "Read More" */
+.read-more {
+  font-size: 20px;
+  position: relative;
+  font-weight: 600;
+  color: orangered;
+  padding: 10px 0px;
+}
+
+/* Gạch chân trang trí cho "Read More" */
+.read-more::after {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  content: ""; /* Phần tử giả để vẽ gạch */
+  width: 50px; /* Chiều dài gạch */
+  height: 3px; /* Độ dày */
+  background-color: orangered; /* Màu cam */
+}

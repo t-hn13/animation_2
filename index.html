@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!-- Khai báo chuẩn HTML5 để trình duyệt render đúng tiêu chuẩn -->
+<html lang="en">
+  <!-- Ngôn ngữ tài liệu; hỗ trợ SEO, trợ năng -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Bảng mã UTF-8: hiển thị đúng tiếng Việt/ký tự đặc biệt -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Giúp giao diện responsive: 1 CSS pixel = 1 device pixel ở mobile -->
+
+    <title>Card Example</title>
+    <!-- Tiêu đề tab trình duyệt -->
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- Nối tới file CSS của bạn (nếu có). Ở dưới mình có thêm một block CSS mẫu để tham khảo. -->
+
+    <style>
+      /* Nạp font Google; dùng @import trong <style> để có sẵn font khi demo nhanh.
+         Khi làm thật, nên gộp vào style.css để ít request hơn. */
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+    </style>
+  </head>
+
+  <body>
+    <!-- Card tổng -->
+    <div class="card">
+      <!-- Vùng chứa ảnh: tách riêng để dễ đặt tỉ lệ, cắt tràn, làm hiệu ứng zoom -->
+      <div class="img">
+        <!-- Thuộc tính alt giúp SEO và hỗ trợ đọc màn hình -->
+        <img src="img-1.jpg" alt="Mechanical Engineering" />
+      </div>
+
+      <!-- Nội dung của card -->
+      <div class="card-content">
+        <!-- Tiêu đề mục -->
+        <h3>Mechanical Engineering</h3>
+
+        <!-- Đoạn mô tả. Trong CSS mình chú thích cách rút gọn ... khi quá dài -->
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus
+          soluta praesentium neque totam saepe consequuntur! Esse similique
+          nesciunt consequatur corporis, quos, autem cumque, sapiente facere aut
+          quas provident sed nam! Consequuntur cum voluptatem similique
+          repellendus hic rem recusandae sint repudiandae est, porro vel quis
+          necessitatibus maxime harum, mollitia dolore rerum fugit distinctio
+          assumenda soluta inventore modi accusamus! Molestiae, incidunt
+          aliquam. Blanditiis dolorum sint hic quae modi quisquam odio
+          voluptatibus praesentium non consequuntur incidunt placeat facilis
+          libero maiores numquam recusandae fugiat aut cum perspiciatis qui,
+          dolores dicta eveniet! Doloremque, ut tenetur?
+        </p>
+
+        <!-- Liên kết/CTA ở cuối card -->
+        <a href="#" class="read-more">Read More</a>
+      </div>
+    </div>
+  </body>
+</html>
